@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Für Dich mein Baby❤️</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0,0,0,0.3);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            white-space: pre-line;
+            min-height: 120px;
+        }
+
+        button {
+            background-color: #ff6b81;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff4757;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Für Dich, Askim</h1>
+        <p id="liebesText"></p>
+        <button onclick="zeigeText()">Lies meinen Liebesbrief!</button>
+    </div>
+
+    <script>
+        const text = `Mein Herz schlägt nur für dich. 
+Jeder Moment mit dir ist ein Geschenk, 
+und ich liebe dich mehr, als Worte jemals ausdrücken könnten. 
+Du bist mein Leben, mein Frieden und mein Zuhause. Ich lebe für dich und ich Sterbe für dich!`;
+
+        function zeigeText() {
+            const liebesText = document.getElementById("liebesText");
+            liebesText.innerText = "";
+            let index = 0;
+
+            const interval = setInterval(() => {
+                liebesText.innerText += text[index];
+                index++;
+                if (index >= text.length) clearInterval(interval);
+            }, 50); // Geschwindigkeit der Buchstaben (ms)
+        }
+    </script>
+</body>
+</html>
